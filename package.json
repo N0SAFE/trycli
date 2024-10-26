@@ -1,6 +1,6 @@
 {
   "name": "@n0safe/trycli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "bin": {
     "trycli": "dist/index.js",
@@ -15,7 +15,8 @@
     "build": "npm run clean && concurrently -c \"blue,green\" -n \"files,types\" \"npm run tsup\" \"tsc --build --force --pretty --preserveWatchOutput --verbose --diagnostics\"",
     "build:no:check": "npm run clean && concurrently -c \"blue,green\" -n \"files,types\" \"npm run tsup\" \"tsc --build --noCheck --force --pretty --preserveWatchOutput --verbose --diagnostics\"",
     "lint": "eslint \"**/*.ts*\"",
-    "trycli": "node dist/index.js"
+    "trycli": "node dist/index.js",
+    "trycli-options": "node dist/withOptions.js --command \"echo ui\""
   },
   "keywords": [],
   "author": "",

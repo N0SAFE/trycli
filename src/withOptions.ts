@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
-import { spawn } from "child_process";
+import { spawnSync } from "child_process";
 
 const program = new Command();
 
@@ -17,8 +17,8 @@ if (!options.command) {
 }
 
 try {
-    spawn(options.command, {
-        stdio: "inherit",
+    spawnSync(options.command, {
+        stdio: options.silent ? "ignore" : "inherit",
         shell: true
     });
     process.exit(0);
